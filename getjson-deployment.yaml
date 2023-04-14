@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: getjson
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: getjson
+  template:
+    metadata:
+      labels:
+        app: getjson
+    spec:
+      containers:
+        - name: getjson
+          image: ldinakar/firstdocker:get-json-v1
+          ports:
+            - containerPort: 7000

@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: read-json
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: read-json
+  template:
+    metadata:
+      labels:
+        app: read-json
+    spec:
+      containers:
+        - name: read-json
+          image: ldinakar/firstdocker:read-json-v3
+          ports:
+            - containerPort: 9000
